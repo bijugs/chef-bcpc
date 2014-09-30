@@ -40,3 +40,6 @@ default[:bcpc][:hadoop][:zookeeper][:leader_connect][:port] = 2888
 
 #Port for leader election in the Quorum
 default[:bcpc][:hadoop][:zookeeper][:leader_elect][:port] = 3888
+
+#Attribute to indicate whether there was a failure in the earlier ZK server restart process
+default[:bcpc][:hadoop][:zookeeper_server][:restart_failed] = false

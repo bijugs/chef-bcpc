@@ -370,3 +370,17 @@ def get_restart_lock_holder(znode_path, zk_hosts="localhost:2181")
   end
   return val
 end
+#
+# Function to generate the full path of znode which will be used to create a restart lock znode
+#
+def format_restart_lock_path(root, lock_name)
+  begin
+    if root.nil?
+      return "/#{lock_name}"
+    elsif root == "/"
+      return "/#{lock_name}"
+    else
+      return "#{root}/#{lock_name}"
+    end
+  end
+end
