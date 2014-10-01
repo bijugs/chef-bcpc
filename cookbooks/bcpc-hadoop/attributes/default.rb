@@ -41,8 +41,12 @@ default["bcpc"]["hadoop"]["restart_lock_acquire"]["max_tries"] = 5
 default["bcpc"]["hadoop"]["restart_lock"]["root"] = "/"
 # Sleep time in seconds between tries to acquire the lock for restart
 default["bcpc"]["hadoop"]["restart_lock_acquire"]["sleep_time"] = 2
-# Flag to set whether the restart process was successful or not
+# Flag to set whether the HDFS datanode restart process was successful or not
 default["bcpc"]["hadoop"]["datanode"]["restart_failed"] = false
+# Flag to set whether the HBase region server restart process was successful or not
+default["bcpc"]["hadoop"]["hbase_regionserver"]["restart_failed"] = false
+# Flag to set whether the HBase cluster utilizing HBASE-10070 so that RS can be restarted 
+default["bcpc"]["hadoop"]["hbase_10070"]["enabled"] = true
 
 default[:bcpc][:hadoop][:nn_hosts] = []
 default[:bcpc][:hadoop][:jn_hosts] = []
